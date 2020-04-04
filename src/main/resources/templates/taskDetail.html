@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>taskDetail</title>
+</head>
+<body>
+<h1>Task detail</h1>
+<div th:object="${task}">
+    <p th:text="'Title: '+*{title}"></p>
+    <p th:text="'Description: '+*{description}"></p>
+    <p th:text="'Due date: '+*{dueDate}"></p>
+    <table th:unless="*{subTasks.isEmpty()}">
+        <thead>
+            <th>Subtask Title</th>
+            <th>Subtask Description</th>
+        </thead>
+        <tr th:each="subtask: *{subTasks}">
+            <td th:text="${subtask.title}"></td>
+            <td th:text="${subtask.description}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
