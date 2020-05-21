@@ -2,9 +2,11 @@
 <html th:lang="#{language}" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title  th:text="#{taskDetail}"></title>
+    <title th:text="#{taskDetail}"></title>
 </head>
 <body>
+<button onclick="location.href='?lang=nl'">Nederlands</button>
+<button onclick="location.href='?lang=en'">English</button>
 <h1 th:text="#{taskDetail}"></h1>
 <div th:object="${task}">
     <p th:text="#{title} + ': '+*{title}"></p>
@@ -12,8 +14,8 @@
     <p th:text="#{duedate} + ': '+*{dueDate}"></p>
     <table th:unless="*{subTasks.isEmpty()}">
         <thead>
-            <th  th:text="#{subTaskTitle}"></th>
-            <th  th:text="#{subTaskDescription}"></th>
+        <th th:text="#{subTaskTitle}"></th>
+        <th th:text="#{subTaskDescription}"></th>
         </thead>
         <tr th:each="subtask: *{subTasks}">
             <td th:text="${subtask.title}"></td>

@@ -5,8 +5,11 @@
     <title th:text="#{addSubTask}"></title>
 </head>
 <body>
+<button onclick="location.href='?lang=nl'">Nederlands</button>
+<button onclick="location.href='?lang=en'">English</button>
 <h1 th:text="#{addSubTask}"></h1>
-<form method="post" th:action="${edit} ? '/tasks/'+${taskId}+'/sub/edit' : '/tasks/'+${taskId}+'/sub/create'" th:object="${subTask}">
+<form method="post" th:action="${edit} ? '/tasks/'+${taskId}+'/sub/edit' : '/tasks/'+${taskId}+'/sub/create'"
+      th:object="${subTask}">
     <input type="hidden" name="subId" id="subId" th:if="${edit}" th:value="${subId}">
     <p>
         <label for="title" th:text="#{title}"></label>

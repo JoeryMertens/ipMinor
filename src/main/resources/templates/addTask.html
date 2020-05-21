@@ -5,6 +5,8 @@
     <title th:text="${edit} ? #{editTask} : #{newtask}"></title>
 </head>
 <body>
+<button onclick="location.href='?lang=nl'">Nederlands</button>
+<button onclick="location.href='?lang=en'">English</button>
 <h1 th:text="${edit} ? #{editTask} : #{newtask}"></h1>
 <form method="post" th:action="${edit} ? '/tasks/edit' : '/tasks/create'" th:object="${task}">
     <input type="hidden" name="id" id="id" th:if="${edit}" th:value="${id}">
@@ -13,7 +15,7 @@
         <input id="title" name="title" type="text" th:field="*{title}">
     </p>
     <p>
-        <label for="description" th:text="#{description}" ></label>
+        <label for="description" th:text="#{description}"></label>
         <input id="description" name="description" type="text" th:field="*{description}">
     </p>
     <p>
