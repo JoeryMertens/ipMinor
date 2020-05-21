@@ -13,7 +13,7 @@ public class Task {
     private String dueDate;
     private String title;
     private String description;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "parent_id")
     private List<SubTask> subTasks = new ArrayList<SubTask>();
 

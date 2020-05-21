@@ -54,13 +54,13 @@ public class TaskService implements ITaskService {
 
     @Override
     public void createTask(TaskDTO taskDTO) {
-        Task task = new Task(taskDTO.getTitle(), taskDTO.getDescription(), taskDTO.getDueDate());
+        Task task = new Task(taskDTO.getTitle(), taskDTO.getDueDate(), taskDTO.getDescription());
         taskRepository.save(task);
     }
 
     @Override
     public void editTask(UUID id, TaskDTO taskDTO) {
-        Task task = new Task(taskDTO.getTitle(), taskDTO.getDescription(), taskDTO.getDueDate());
+        Task task = new Task(taskDTO.getTitle(), taskDTO.getDueDate(), taskDTO.getDescription());
         task.setUuid(id);
         taskRepository.save(task);
     }
