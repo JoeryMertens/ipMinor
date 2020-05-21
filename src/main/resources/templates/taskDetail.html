@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html th:lang="#{language}" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>taskDetail</title>
+    <title  th:text="#{taskDetail}"></title>
 </head>
 <body>
-<h1>Task detail</h1>
+<h1 th:text="#{taskDetail}"></h1>
 <div th:object="${task}">
-    <p th:text="'Title: '+*{title}"></p>
-    <p th:text="'Description: '+*{description}"></p>
-    <p th:text="'Due date: '+*{dueDate}"></p>
+    <p th:text="#{title} + ': '+*{title}"></p>
+    <p th:text="#{description} + ': '+*{description}"></p>
+    <p th:text="#{duedate} + ': '+*{dueDate}"></p>
     <table th:unless="*{subTasks.isEmpty()}">
         <thead>
-            <th>Subtask Title</th>
-            <th>Subtask Description</th>
+            <th  th:text="#{subTaskTitle}"></th>
+            <th  th:text="#{subTaskDescription}"></th>
         </thead>
         <tr th:each="subtask: *{subTasks}">
             <td th:text="${subtask.title}"></td>

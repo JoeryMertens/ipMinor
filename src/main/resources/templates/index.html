@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html th:lang="#{language}" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title th:text="#{index}"></title>
 </head>
 <body>
 <ul>
-    <li><a href="/tasks">Task list</a></li>
-    <li><a href="/tasks/new">New task</a></li>
+    <li><a href="/tasks" th:text="#{tasks}"></a></li>
+    <li><a href="/tasks/new" th:text="#{newtask}"></a></li>
 </ul>
 
 </body>
